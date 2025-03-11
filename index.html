@@ -39,9 +39,9 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link active" href="#">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#servicios">Proyectos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#quienes-somos">Quiénes Somos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+                    <li class="nav-item"><a class="nav-link" href="">Proyectos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="">Quiénes Somos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="">Contacto</a></li>
                 </ul>
             </div>
         </div>
@@ -52,7 +52,7 @@
             <div class="overlay-content">
                 <a href="#">Inicio</a>
                 <a href="#servicios">Proyectos</a>
-                <a href="#quienes-somos">Quiénes Somos</a>
+                <a href="#quienes">Quiénes Somos</a>
                 <a href="#contacto">Contacto</a>
                 <a class="mt-4" href="tel:+34684208064">Teléfono</a>
                 <a class="border-top border-2 border-danger w-50 mx-auto" href="tel:+34684208064">684 208 064</a>
@@ -131,31 +131,31 @@
     </header>
     <main>
         <!-- Card Presentation -->
-        <section class="cards">
-            <div class="card rounded-0">
+        <section class="cards box-scroll">
+            <div class="card rounded-0  box-scroll">
                 <img src="./assets/img/houseLux4.jpeg" alt="Imagen casa">
                 <h3>Profesionalidad</h3>
                 <p>Nos comprometemos a ofrecer la más alta calidad en todos nuestros proyectos, utilizando materiales de
                     primera y técnicas avanzadas.</p>
             </div>
-            <div class="card rounded-0">
+            <div class="card rounded-0  box-scroll">
                 <img src="./assets/img/albañiles1.jpeg" alt="Albañíl trabajando">
                 <h3>Experiencia</h3>
                 <p>Con más de 20 años en el sector, nuestro equipo cuenta con la experiencia necesaria para llevar a
                     cabo cualquier tipo de construcción.</p>
             </div>
-            <div class="card rounded-0">
+            <div class="card rounded-0  box-scroll">
                 <img src="./assets/img/planos.jpg" alt="Imagen de una casa">
                 <h3>Calidad - Precio</h3>
                 <p>
                     Ofrecemos un servicio de calidad a precios competitivos, garantizando la satisfacción de nuestros
-                    clientes. No dudes en consultarnos.
+                    clientes. No dudes en consultarnos cualquierduda.
                 </p>
             </div>
         </section>
-        <section id="quienes-somos">
+        <section >
             <!-- Sobre Nosotros -->
-            <section class="about-us">
+            <section class="about-us" id="quienes">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-6 d-flex flex-column justify-content-center pe-5 box-left">
@@ -225,19 +225,19 @@
             </section>
             <!-- Lema -->
             <section>
-                <div class="h2-about">
+                <div class="h2-about tituloTop">
                     <p>LOS RESULTADOS SON LA GARANTÍA DE NUESTRO TRABAJO</p>
                 </div>
             </section>
             <!-- Servicios -->
             <section>
-                <div class="container container-services" id="servicios">
+                <div class="container container-services box-left" id="servicios">
                     <p class="fw-bold p-title">
                         COMO TRABAJAMOS
                     </p>
                     <h2 class="title-h2 mb-4">Nuestros Servicios</h2>
                 </div>
-                <div class="services">
+                <div class="services tituloTop">
                     <div class="gallery-container">
                         <div class="gallery-item">
                             <img src="./assets/servicios/baño.jpg" alt="Imagen de un baño" loading="lazy" width="900"
@@ -301,7 +301,7 @@
             </section>
             <!-- Presupuesto -->
             <section>
-                <div class="presupuesto">
+                <div class="presupuesto tituloTop">
                     <h2 class="mx-3">Pide tu presupuesto sin compromiso</h2>
                     <p class="mx-3 ">¿Tienes un proyecto en mente? Contacta con nosotros y te ofreceremos un presupuesto
                         a medida, adaptado a tus necesidades.</p>
@@ -529,13 +529,13 @@
             </section>
             <!-- Formulario -->
             <section id="contacto">
-                <div class="container my-5">
+                <div class="container my-5 tituloTop">
                     <p class="fw-bold p-title">
                         CONTACTO
                     </p>
                     <h2 class="title-h2 mb-4">¿Tienes alguna pregunta?</h2>
                 </div>
-                <div class="container">
+                <div class="container box-left">
                     <div class="row">
                         <div class="col-lg-6">
                             <form action="#" method="post" class="contact-form">
@@ -559,150 +559,7 @@
                 </div>
             </section>
 
-            <section class="portfolio-section" id="trabajos-realizados">
-                <div class="container">
-                    <p class="fw-bold p-title">NUESTROS PROYECTOS</p>
-                    <h2 class="title-h2 mb-4">Trabajos Realizados</h2>
-
-                    <div class="portfolio-carousel-container">
-                        <!-- Swiper -->
-                        <div class="swiper portfolioSwiper">
-                            <div class="swiper-wrapper">
-                                <!-- Proyecto 1 -->
-                                <div class="swiper-slide">
-                                    <div class="portfolio-item">
-                                        <div class="portfolio-img">
-                                            <img src="./assets/carruselWork/workRealizer(1).jpg"
-                                                alt="Reforma integral de vivienda">
-                                            <div class="portfolio-overlay">
-                                                <a href="./assets/carruselWork/workRealizer(1).jpg" class="portfolio-zoom">
-                                                    <i class="fas fa-search-plus"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="portfolio-info">
-                                            <h3>Reforma integral en Armilla</h3>
-                                            <span class="category">Reforma integral</span>
-                                            <p>Renovación completa de una vivienda de 120m² incluyendo cocina, 2 baños y
-                                                todas las estancias.</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Proyecto 2 -->
-                                <div class="swiper-slide">
-                                    <div class="portfolio-item">
-                                        <div class="portfolio-img">
-                                            <img src="./assets/carruselWork/workRealizer(1).jpg" alt="Reforma de baño">
-                                            <div class="portfolio-overlay">
-                                                <a href="./assets/carruselWork/workRealizer(1).jpg" class="portfolio-zoom">
-                                                    <i class="fas fa-search-plus"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="portfolio-info">
-                                            <h3>Baño moderno en Granada</h3>
-                                            <span class="category">Reforma de baño</span>
-                                            <p>Transformación de un baño anticuado en un espacio moderno con ducha a
-                                                nivel, sanitarios suspendidos y grifería de alta calidad.</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Proyecto 3 -->
-                                <div class="swiper-slide">
-                                    <div class="portfolio-item">
-                                        <div class="portfolio-img">
-                                            <img src="./assets/carruselWork/workRealizer(1).jpg" alt="Cocina moderna">
-                                            <div class="portfolio-overlay">
-                                                <a href="./assets/carruselWork/workRealizer(1).jpg" class="portfolio-zoom">
-                                                    <i class="fas fa-search-plus"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="portfolio-info">
-                                            <h3>Cocina de diseño en chalet</h3>
-                                            <span class="category">Reforma de cocina</span>
-                                            <p>Diseño y construcción de una cocina abierta con isla central,
-                                                electrodomésticos integrados y materiales de alta gama.</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Proyecto 4 -->
-                                <div class="swiper-slide">
-                                    <div class="portfolio-item">
-                                        <div class="portfolio-img">
-                                            <img src="./assets/carruselWork/workRealizer(1).jpg" alt="Reforma interior">
-                                            <div class="portfolio-overlay">
-                                                <a href="./assets/carruselWork/workRealizer(1).jpg" class="portfolio-zoom">
-                                                    <i class="fas fa-search-plus"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="portfolio-info">
-                                            <h3>Reforma de espacio interior</h3>
-                                            <span class="category">Diseño de interiores</span>
-                                            <p>Rediseño completo de un espacio interior, incluyendo distribución,
-                                                iluminación y mobiliario a medida.</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Proyecto 5 -->
-                                <div class="swiper-slide">
-                                    <div class="portfolio-item">
-                                        <div class="portfolio-img">
-                                            <img src="./assets/carruselWork/workRealizer(1).jpg" alt="Construcción de piscina">
-                                            <div class="portfolio-overlay">
-                                                <a href="./assets/carruselWork/workRealizer(1).jpg" class="portfolio-zoom">
-                                                    <i class="fas fa-search-plus"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="portfolio-info">
-                                            <h3>Piscina y zona exterior</h3>
-                                            <span class="category">Obra exterior</span>
-                                            <p>Construcción de piscina con revestimiento de gresite, zona de solarium y
-                                                jardín con sistema de riego automatizado.</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Proyecto 6 -->
-                                <div class="swiper-slide">
-                                    <div class="portfolio-item">
-                                        <div class="portfolio-img">
-                                            <img src="./assets/carruselWork/workRealizer(1).jpg" alt="Casa unifamiliar">
-                                            <div class="portfolio-overlay">
-                                                <a href="./assets/carruselWork/workRealizer(1).jpg" class="portfolio-zoom">
-                                                    <i class="fas fa-search-plus"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="portfolio-info">
-                                            <h3>Casa unifamiliar en Almuñécar</h3>
-                                            <span class="category">Obra nueva</span>
-                                            <p>Construcción de vivienda unifamiliar de 3 dormitorios con piscina y
-                                                vistas al mar, utilizando materiales sostenibles.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Añadir navegación -->
-                            <div class="swiper-button-next portfolio-next"></div>
-                            <div class="swiper-button-prev portfolio-prev"></div>
-                            <div class="swiper-pagination portfolio-pagination"></div>
-                        </div>
-                    </div>
-
-                    <div class="text-center mt-5">
-                        <a href="./views/galeria.html" class="btn fw-bold btn-primary">Ver todos los proyectos</a>
-                    </div>
-                </div>
-            </section>
-
+          
 
     </main>
     <footer class="footer-section">
@@ -792,7 +649,7 @@
     <script src="./js/scriptHero.js"></script>
     <script src="./js/navbar.js"></script>
     <script src="./js/portfolioCarousel.js"></script>
-        <!-- JavaScript de Swiper -->
+         
 </body>
 
 </html>

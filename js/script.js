@@ -112,3 +112,59 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+// Estilos y animaciones 
+
+const elements = document.querySelectorAll('.box-scroll, .tituloTop , .box-scale, .titulo-scale, .box-left, .titulo-left, .box-right, .titulo-right, .box-fade, .titulo-fade')
+
+function mostrarElements(){
+    const altura = window.innerHeight * 0.8
+
+    elements.forEach(element => {
+        const elementTop = element.getBoundingClientRect().top
+
+        if(elementTop < altura) {
+            element.classList.add('show')
+        }else{
+            element.classList.remove('show')
+        }
+    });
+}
+
+window.addEventListener('scroll', mostrarElements)
+
+
+// Añadir al archivo script.js
+document.addEventListener('DOMContentLoaded', function() {
+    // Cerrar menú móvil al hacer clic en un enlace
+    const navLinks = document.querySelectorAll('.nav-link');
+    const overlay = document.getElementById('overlay');
+    
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            // Si el overlay está visible (menú móvil abierto)
+            if (overlay && window.getComputedStyle(overlay).display !== 'none') {
+                document.getElementById('menuToggle').click();
+            }
+            
+            // Pequeño retraso para el desplazamiento en móviles
+            const href = this.getAttribute('href');
+            if (href.startsWith('#') && href !== '#') {
+                setTimeout(() => {
+                    const targetElement = document.querySelector(href);
+                    if (targetElement) {
+                        // Ajuste para compensar la altura del menú fijo
+                        const offset = 80; 
+                        const elementPosition = targetElement.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - offset;
+                        
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                }, 300);
+            }
+        });
+    });
+});
