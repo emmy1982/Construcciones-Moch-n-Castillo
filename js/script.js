@@ -40,3 +40,41 @@ var swiper = new Swiper(".testimonials", {
     },
     loop: true,
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const backToTopButton = document.getElementById('back-to-top');
+    
+    // Función para mostrar u ocultar el botón según la posición de scroll
+    function toggleBackToTopButton() {
+        if (window.scrollY > 300) {
+            backToTopButton.classList.add('visible');
+        } else {
+            backToTopButton.classList.remove('visible');
+        }
+    }
+    
+    // Inicialmente comprobar si debemos mostrar el botón
+    toggleBackToTopButton();
+    
+    // Escuchar el evento de scroll para mostrar/ocultar el botón
+    window.addEventListener('scroll', function() {
+        toggleBackToTopButton();
+        
+        // Eliminar la clase de animación si existe
+        if (backToTopButton.classList.contains('bounce')) {
+            backToTopButton.classList.remove('bounce');
+        }
+    });
+    
+    // Función para desplazarse suavemente hacia arriba
+    backToTopButton.addEventListener('click', function() {
+        // Añadir clase de animación al hacer clic
+        this.classList.add('bounce');
+        
+        // Desplazamiento suave hacia arriba
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+});

@@ -36,9 +36,9 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link active" href="#">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Proyectos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Quiénes Somos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#servicios">Proyectos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#quienes-somos">Quiénes Somos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
                 </ul>
             </div>
         </div>
@@ -48,9 +48,9 @@
         <div class="overlay" id="overlay">
             <div class="overlay-content">
                 <a href="#">Inicio</a>
-                <a href="#">Proyectos</a>
-                <a href="#">Quiénes Somos</a>
-                <a href="#">Contacto</a>
+                <a href="#servicios">Proyectos</a>
+                <a href="#quienes-somos">Quiénes Somos</a>
+                <a href="#contacto">Contacto</a>
             </div>
         </div>
 
@@ -63,8 +63,8 @@
                     <div class="carousel-overlay"></div>
                     <div class="carousel-caption d-flex align-items-center justify-content-center">
                         <div class="text-center w-100">
-                            <h1 class="animate-title "> <span class="construccion">Construcción</span> y Reformas
-                                integrales</h1>
+                            <h1 class="animate-title"> Reformas
+                                integrales <br> y <br>Obras</h1>
                             <p class="animate-text fs-5">Somos una empresa de construcción dedicada a ofrecer servicios
                                 de alta calidad.</p>
                             <div class="hero-buttons d-flex justify-content-center align-items-center gap-2 mx-auto">
@@ -145,10 +145,10 @@
         </section>
         <section>
             <!-- Sobre Nosotros -->
-            <section class="about-us">
+            <section class="about-us" id="quienes-somos">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-6 d-flex flex-column justify-content-center pe-5 box-left mx-3">
+                        <div class="col-md-6 d-flex flex-column justify-content-center pe-5 box-left">
                             <p class="fw-bold p-title">
                                 SOBRE NOSOTROS
                             </p>
@@ -197,17 +197,19 @@
                 </div>
                 </div>
             </section>
+            <!-- Lema -->
             <section>
                 <div class="h2-about">
                     <p>LOS RESULTADOS SON LA GARANTÍA DE NUESTRO TRABAJO</p>
                 </div>
             </section>
+            <!-- Servicios -->
             <section>
-                <div class="container container-services">
-                    <p class="fw-bold p-title mx-4">
+                <div class="container container-services" id="servicios">
+                    <p class="fw-bold p-title">
                         COMO TRABAJAMOS
                     </p>
-                    <h2 class="title-h2 mb-4 mx-4">Nuestros Servicios</h2>
+                    <h2 class="title-h2 mb-4">Nuestros Servicios</h2>
                 </div>
                 <div class="services">
                     <div class="gallery-container">
@@ -216,7 +218,7 @@
                                 height="500">
                             <div class="overlay-gradient"></div>
                             <div class="gallery-content">
-                                <h2 class="gallery-title">Reforma de Baños</h2>
+                                <h2 class="gallery-title text-light">Reforma de Baños</h2>
                                 <p class="gallery-description">
                                     Realizamos reformas de baños completas, adaptadas a tus necesidades y gustos
                                 </p>
@@ -230,7 +232,7 @@
                                 width="900" height="500">
                             <div class="overlay-gradient"></div>
                             <div class="gallery-content">
-                                <h2 class="gallery-title">
+                                <h2 class="gallery-title text-light">
                                     Cocinas
                                 </h2>
                                 <p class="gallery-description">
@@ -246,7 +248,7 @@
                                 width="900" height="500">
                             <div class="overlay-gradient"></div>
                             <div class="gallery-content">
-                                <h2 class="gallery-title">Interiores</h2>
+                                <h2 class="gallery-title text-light">Interiores</h2>
                                 <p class="gallery-description">
                                     Creamos espacios interiores únicos y personalizados, adaptados a tus necesidades
                                 </p>
@@ -260,7 +262,7 @@
                                 width="900" height="500">
                             <div class="overlay-gradient"></div>
                             <div class="gallery-content">
-                                <h2 class="gallery-title">Piscinas y Exteriores</h2>
+                                <h2 class="gallery-title text-light">Piscinas y Exteriores</h2>
                                 <p class="gallery-description">
                                     Diseñamos y construimos piscinas y espacios exteriores para disfrutar al aire libre
                                 </p>
@@ -271,118 +273,125 @@
                     <!-- <button class="btn fw-bold btn-primary w-50">Todos los servicios</button> -->
                 </div>
             </section>
-
+            <!-- Presupuesto -->
             <section>
                 <div class="presupuesto">
                     <h2 class="mx-3">Pide tu presupuesto sin compromiso</h2>
                     <p class="mx-3 ">¿Tienes un proyecto en mente? Contacta con nosotros y te ofreceremos un presupuesto
                         a medida, adaptado a tus necesidades.</p>
                     <div>
-                        <button class="btn fw-bold btn-primary ">Llámanos</button>
+                        <a href="tel:+34684208064" class="btn fw-bold btn-primary">Llámanos</a>
                         <h3 class="mt-4">¿Hablamos?</h3>
-                        <h4 class="border-top border-2 border-danger fw-bold mb-5">644898765</h4>
+                        <h4 class="border-top border-2 border-danger fw-bold mb-5">684 208 064</h4>
                     </div>
                     <div class="container">
-                        <div class="accordion" id="accordionPanelsStayOpenExample">
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
-                                        aria-controls="panelsStayOpen-collapseOne">
-                                        ¿Cómo puedo obtener un presupuesto para mi proyecto de reforma u obra nueva?
-                                    </button>
-                                </h2>
-                                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
-                                    <div class="accordion-body">
-                                        <p class="text-start">Para obtener un presupuesto para tu proyecto de reforma u
-                                            obra nueva, puedes contactar con nosotros a través de nuestro formulario de
-                                            contacto o llamando al teléfono 644898765. Te ofreceremos un presupuesto a
-                                            medida, adaptado a tus necesidades y gustos.</p>
+                        <div class="row justify-content-center">
+                            <div class="col-12 col-lg-9">
+                                <div class="accordion mx-auto" id="accordionPanelsStayOpenExample">
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                                data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                                                aria-controls="panelsStayOpen-collapseOne">
+                                                ¿Cómo puedo obtener un presupuesto para mi proyecto de reforma u obra nueva?
+                                            </button>
+                                        </h2>
+                                        <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+                                            <div class="accordion-body">
+                                                <p class="text-start">Para obtener un presupuesto para tu proyecto de reforma u
+                                                    obra nueva, puedes contactar con nosotros a través de nuestro formulario de
+                                                    contacto o llamando al teléfono 644898765. Te ofreceremos un presupuesto a
+                                                    medida, adaptado a tus necesidades y gustos.</p>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
-                                        aria-controls="panelsStayOpen-collapseTwo">
-                                        ¿Ofrecen servicios de diseño de interiores para reformas?
-                                    </button>
-                                </h2>
-                                <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
-                                    <div class="accordion-body">
-                                        <p class="text-start">Sí, ofrecemos servicios de diseño de interiores para
-                                            reformas, adaptados a tus necesidades y gustos. Nuestro equipo de
-                                            profesionales te asesorará en todo momento para crear espacios únicos y
-                                            personalizados.
-                                        </p>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                                data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
+                                                aria-controls="panelsStayOpen-collapseTwo">
+                                                ¿Ofrecen servicios de diseño de interiores para reformas?
+                                            </button>
+                                        </h2>
+                                        <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
+                                            <div class="accordion-body">
+                                                <p class="text-start">Sí, ofrecemos servicios de diseño de interiores para
+                                                    reformas, adaptados a tus necesidades y gustos. Nuestro equipo de
+                                                    profesionales te asesorará en todo momento para crear espacios únicos y
+                                                    personalizados.
+                                                </p>
 
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
-                                        aria-controls="panelsStayOpen-collapseThree">
-                                        ¿Cuánto tiempo tomará completar mi proyecto de obra nueva o reforma? </button>
-                                </h2>
-                                <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
-                                    <div class="accordion-body">
-                                        <p class="text-start">
-                                            El tiempo necesario para completar tu proyecto de obra nueva o reforma
-                                            dependerá de la envergadura del mismo y de los trabajos a realizar. En
-                                            Construcciones y Reformas Emilio Mochón nos comprometemos a cumplir con los
-                                            plazos establecidos y a ofrecer un servicio rápido y eficiente.
-                                        </p>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                                data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
+                                                aria-controls="panelsStayOpen-collapseThree">
+                                                ¿Cuánto tiempo tomará completar mi proyecto de obra nueva o reforma? </button>
+                                        </h2>
+                                        <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
+                                            <div class="accordion-body">
+                                                <p class="text-start">
+                                                    El tiempo necesario para completar tu proyecto de obra nueva o reforma
+                                                    dependerá de la envergadura del mismo y de los trabajos a realizar. En
+                                                    Construcciones y Reformas Emilio Mochón nos comprometemos a cumplir con los
+                                                    plazos establecidos y a ofrecer un servicio rápido y eficiente.
+                                                </p>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false"
-                                        aria-controls="panelsStayOpen-collapseThree">
-                                        ¿Ofrecen servicios de obra nueva en Granada? </button>
-                                </h2>
-                                <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse">
-                                    <div class="accordion-body">
-                                        <p class="text-start">
-                                            Sí, ofrecemos servicios de obra nueva en Granada y provincia. Realizamos
-                                            todo tipo de trabajos de construcción, desde la cimentación hasta los
-                                            acabados, garantizando la máxima calidad en todos nuestros proyectos.
-                                        </p>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                                data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false"
+                                                aria-controls="panelsStayOpen-collapseThree">
+                                                ¿Ofrecen servicios de obra nueva en Granada? </button>
+                                        </h2>
+                                        <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse">
+                                            <div class="accordion-body">
+                                                <p class="text-start">
+                                                    Sí, ofrecemos servicios de obra nueva en Granada y provincia. Realizamos
+                                                    todo tipo de trabajos de construcción, desde la cimentación hasta los
+                                                    acabados, garantizando la máxima calidad en todos nuestros proyectos.
+                                                </p>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#panelsStayOpen-collapseFive" aria-expanded="false"
-                                        aria-controls="panelsStayOpen-collapseThree">
-                                        ¿Ofrecen servicios de dirección y control de obras para reformas? </button>
-                                </h2>
-                                <div id="panelsStayOpen-collapseFive" class="accordion-collapse collapse">
-                                    <div class="accordion-body">
-                                        <p class="text-start">
-                                            Sí, ofrecemos servicios de dirección y control de obras para reformas,
-                                            garantizando la correcta ejecución de los trabajos y el cumplimiento de los
-                                            plazos establecidos. Nuestro equipo de profesionales se encargará de
-                                            supervisar cada detalle para que tu proyecto sea un éxito.
-                                        </p>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                                data-bs-target="#panelsStayOpen-collapseFive" aria-expanded="false"
+                                                aria-controls="panelsStayOpen-collapseThree">
+                                                ¿Ofrecen servicios de dirección y control de obras para reformas? </button>
+                                        </h2>
+                                        <div id="panelsStayOpen-collapseFive" class="accordion-collapse collapse">
+                                            <div class="accordion-body">
+                                                <p class="text-start">
+                                                    Sí, ofrecemos servicios de dirección y control de obras para reformas,
+                                                    garantizando la correcta ejecución de los trabajos y el cumplimiento de los
+                                                    plazos establecidos. Nuestro equipo de profesionales se encargará de
+                                                    supervisar cada detalle para que tu proyecto sea un éxito.
+                                                </p>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
                 </div>
 
             </section>
             <!-- Testimonios -->
         <section class="testimonials-section ">
-            <p class="fw-bold p-title mx-4">
-                NUESTRAS RESEÑAS
-            </p>
+            <div class="container">
+                <p class="fw-bold p-title">
+                    NUESTRAS RESEÑAS
+                </p>
+            </div>
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-8 box-left">
@@ -458,27 +467,56 @@
                 </div>
             </div>
         </section>
+        <!-- Imagen con Logo -->
         <section>
             <div class="imglogo">
                 <img src="./assets/img/logoRed.png" alt="imagen de logo de la empresa" width="671" height="372">
             </div>
         </section>
+        <!-- Formulario -->
+         <section>
+            <div class="container my-5" id="contacto">
+                <p class="fw-bold p-title">
+                    CONTACTO
+                </p>
+                <h2 class="title-h2 mb-4">¿Tienes alguna pregunta?</h2>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <form action="#" method="post" class="contact-form">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Nombre</label>
+                                <input type="text" class="form-control" id="name" name="name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Correo Electrónico</label>
+                                <input type="email" class="form-control" id="email" name="email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Mensaje</label>
+                                <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn fw-bold btn-primary mb-5">Enviar</button>
+                        </form>
+                    </div>   
+         </section>
 
     </main>
     <footer class="footer-section">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 mb-4 mb-lg-0">
-                    <h2 class="footer-logo nameAbout">EMILIO<strong>MOCHÓN</strong></h2>
+                    <img class="logoFooter" src="assets/img/logo-enhanced-removebg-preview.png" alt="logo de la empresa">
                     <p class="footer-description">
                         Somos una empresa de construcción dedicada a ofrecer servicios de alta calidad en el sector de la
                         construcción y las reformas.
                     </p>
                     <div class="footer-social">
-                        <a href="https://www.facebook.com" target="_blank" class="social-link"><i class="bi bi-facebook"></i></a>
-                        <a href="https://www.instagram.com" target="_blank" class="social-link"><i class="bi bi-instagram"></i></a>
-                        <a href="https://www.linkedin.com" target="_blank" class="social-link"><i class="bi bi-linkedin"></i></a>
-                        <a href="https://www.pinterest.com" target="_blank" class="social-link"><i class="bi bi-pinterest"></i></a>
+                        <a href="https://www.facebook.com" target="_blank" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com" target="_blank" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.pinterest.com" target="_blank" class="social-link"><i class="fab fa-pinterest-p"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
@@ -504,16 +542,16 @@
                 <div class="col-lg-3">
                     <h3 class="footer-title">Contacto</h3>
                     <ul class="footer-contact">
-                        <li><i class="bi bi-geo-alt"></i><span>123 Calle Principal, Ciudad</span></li>
-                        <li><i class="bi bi-telephone"></i><span>+34 123 456 789</span></li>
-                        <li><i class="bi bi-envelope"></i><span>info@architect.com</span></li>
+                        <li><i class="bi bi-geo-alt"></i><span>Fray Luis de Granada 4, Armilla</span></li>
+                        <li><i class="bi bi-telephone"></i><span>684208064</span></li>
+                        <li><i class="bi bi-envelope"></i><span>emimochon@hotmail.com</span></li>
                     </ul>
                 </div>
             </div>
             <hr class="footer-divider">
-            <div class="row footer-bottom">
-                <div class="col-md-6"><p class="copyright">© 2024 ARCHITECT. Todos los derechos reservados.</p></div>
-                <div class="col-md-6 text-md-end">
+            <div class="row footer-bottom text-center text-md-start">
+                <div class="col-md-6 "><p class="copyright">© 2024 ARCHITECT. Todos los derechos reservados.</p></div>
+                <div class="col-md-6 text-center text-md-end">
                     <div class="footer-legal">
                         <a href="#">Política de Privacidad</a><span class="separator">|</span><a href="#">Términos y Condiciones</a>
                     </div>
@@ -521,6 +559,17 @@
             </div>
         </div>
     </footer>
+
+    <!-- Botón flotante de WhatsApp -->
+    <a href="https://wa.me/34684208064?text=Hola,%20me%20interesa%20información%20sobre%20sus%20servicios%20de%20construcción" target="_blank" class="float-whatsapp" aria-label="Contáctanos por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+        <span class="whatsapp-tooltip">¡Escríbenos!</span>
+    </a>
+
+    <!-- Botón para volver arriba -->
+    <button id="back-to-top" class="back-to-top" aria-label="Volver arriba">
+        <i class="fas fa-chevron-up"></i>
+    </button>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"

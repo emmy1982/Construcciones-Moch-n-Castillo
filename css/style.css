@@ -21,8 +21,9 @@
 
 body {
     font-family: 'Syne', sans-serif !important;
+    font-size: 1.1rem!important;
     padding-top: 0 !important;
-    color: var(--text-color);
+    color: var(--text-color)!important;
     background-color: var(--background-color) !important;
     overflow-x: hidden;
     display: grid;
@@ -30,10 +31,13 @@ body {
     min-height: 100vh;
 }
 
+h2{
+    color: var(--dark)!important;
+}
+
 .p-title {
     color: var(--primary-color) !important;
 }
-
 
 
 /* Estilos del navbar */
@@ -550,7 +554,7 @@ body {
 
 /* Títulos y textos mejorados */
 .carousel-caption h1 {
-    font-size: 3.5rem;
+    font-size: clamp(1.6rem, 5vw, 3.5rem)!important;
     font-weight: 800;
     margin-bottom: 1rem;
     text-transform: uppercase;
@@ -582,9 +586,9 @@ body {
         font-size: 2.8rem;
     }
 
-    .construcciones {
-        margin-left: -40px !important;
-        font-size: 1.6rem !important;
+    .construccion {
+        margin-left: -60px !important;
+        font-size: 1rem !important;
     }
 
     .carousel-caption p {
@@ -976,7 +980,7 @@ body {
 
 .card h3 {
     font-size: 1.5rem !important;
-    font-weight: 800 !important;
+    font-weight: 600 !important;
     margin: 15px;
     margin-bottom: -5px;
     /* color: var(--primary-color);
@@ -1000,7 +1004,7 @@ body {
 .card:hover {
     transform: translateY(-10px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    filter: brightness(0.9) contrast(1.1);
+    filter: brightness(0.8) contrast(1.1);
 }
 
 /* Estilos responsive */
@@ -1437,6 +1441,11 @@ body {
 
 
 /********************************** Footer *************************************** */
+.logoFooter{
+    width: 200px;
+    height: auto;
+    margin-bottom: 20px;
+}
 
 .footer-section {
     background: linear-gradient(to top, rgba(0, 0, 0, 0.144) 0%, transparent 100%);
@@ -1488,7 +1497,7 @@ body {
 
 .footer-social .social-link:hover {
     background-color: var(--primary-color);
-    color: var(--terciary-white);
+    color: white;
 }
 
 .footer-title {
@@ -1573,4 +1582,170 @@ body {
 /* Ajuste para el contenido que queda debajo del navbar */
 .header-content {
     padding-top: 0 !important;
+}
+
+/* Botón flotante de WhatsApp */
+.float-whatsapp {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 25px;
+    left: 10px!important;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    text-decoration: none;
+}
+
+.float-whatsapp:hover {
+    background-color: #20ba5a;
+    color: #fff;
+    transform: scale(1.1);
+}
+
+.float-whatsapp .fa-whatsapp {
+    margin-top: 2px;
+}
+
+/* Animación de pulso para llamar la atención */
+.float-whatsapp:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #25d366;
+    opacity: 0.7;
+    z-index: -1;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.7;
+    }
+    70% {
+        transform: scale(1.2);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1.2);
+        opacity: 0;
+    }
+}
+
+/* Tooltip para el botón de WhatsApp */
+.float-whatsapp .whatsapp-tooltip {
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+    white-space: nowrap;
+}
+
+.float-whatsapp .whatsapp-tooltip:after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #333 transparent transparent transparent;
+}
+
+.float-whatsapp:hover .whatsapp-tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Ajustes responsive */
+@media (max-width: 768px) {
+    .float-whatsapp {
+        width: 45px;
+        height: 45px;
+        bottom: 20px;
+        left: 20px;
+        font-size: 26px;
+    }
+}
+
+/* Botón para volver arriba */
+.back-to-top {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    bottom: 25px;
+    right: 25px;
+    background-color: #d2262feb!important;
+    color: #FFF;
+    border-radius: 50px;
+    border: solid 1px #f80f0f;
+    text-align: center;
+    font-size: 18px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    opacity: 0;
+    visibility: hidden;
+    cursor: pointer;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    background-color: #c03c42; /* Versión más oscura del rojo corporativo */
+    transform: translateY(-5px);
+}
+
+
+/* Animación de rebote para el botón */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+.back-to-top.bounce {
+    animation: bounce 1s ease;
+}
+
+/* Ajustes responsive */
+@media (max-width: 768px) {
+    .back-to-top {
+        width: 40px;
+        height: 40px;
+        bottom: 20px;
+        right: 10px;
+        font-size: 16px;
+    }
 }
