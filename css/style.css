@@ -21,8 +21,7 @@
 
 body {
     font-family: 'Syne', sans-serif !important;
-    padding-top: 76px;
-    /* Para compensar el navbar fijo */
+    padding-top: 0 !important;
     color: var(--text-color);
     background-color: var(--background-color) !important;
     overflow-x: hidden;
@@ -40,27 +39,28 @@ body {
 /* Estilos del navbar */
 
 .navbar {
-    margin-top: 0 !important;
+    margin-top: -25px !important;
+    position: absolute!important;
 }
 
 .container-nav {
-    margin-top: -80px;
-    height: 140px;
+    margin-top: 0;
+    height: auto;
+    padding: 10px 0;
 }
 
 .navbar-brand img {
-    width: 200px;
+    width: 150px;
     height: auto;
     transition: all 0.3s;
-    margin-top: -20px !important;
-
+    margin-top: 0 !important;
 }
 
 /* Estilos para los logos que cambian al hacer scroll */
 .navbar-brand {
     position: relative;
     display: block;
-    width: 200px;
+    width: 180px;
     height: auto;
 }
 
@@ -74,7 +74,14 @@ body {
         width: 150px;
     }
 
+    .container-nav {
+        padding: 8px 0;
+    }
 
+    #mainNav {
+        top: 0;
+        padding: 0.5rem 0;
+    }
 }
 
 .nav-link {
@@ -132,12 +139,12 @@ body {
     transition: all 0.3s ease-in-out;
     padding: 1rem 0;
     z-index: 1030;
+    position: absolute;
+    width: 100%;
+    top: 0;
 }
 
-/* Eliminar esto */
-#mainNav.navbar-hidden {
-    transform: translateY(-100%);
-}
+
 
 
 /* Estilos de los enlaces cuando el navbar es transparente */
@@ -306,7 +313,6 @@ body {
     position: relative;
     height: 80vh !important;
     margin-top: 0;
-    /* Eliminar el margen negativo si existiera */
     overflow: hidden;
     max-width: 100%;
     z-index: 0;
@@ -315,7 +321,7 @@ body {
 
 
 .carousel-item {
-    height: 100vh;
+    height: 75vh;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -587,12 +593,14 @@ body {
 }
 
 @media (max-width: 768px) {
-
     .container-nav {
-        height: 110px;
+        height: auto !important;
+        margin-top: 0 !important;
     }
-
-
+    
+    .navbar-brand img {
+        margin-top: 0 !important;
+    }
 
     .btn-primary {
         width: 220px !important;
@@ -1564,6 +1572,5 @@ body {
 
 /* Ajuste para el contenido que queda debajo del navbar */
 .header-content {
-    padding-top: 76px;
-    /* La altura del navbar */
+    padding-top: 0 !important;
 }
