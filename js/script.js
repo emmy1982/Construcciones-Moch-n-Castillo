@@ -7,6 +7,18 @@ document.addEventListener('DOMContentLoaded', function() {
         hamburger.classList.toggle('open');
         overlay.classList.toggle('open');
         document.body.classList.toggle('no-scroll');
+        
+        const logoImage = document.querySelector('.navbar-brand img');
+        const originalSrc = logoImage.src;
+        const alternateSrc = logoImage.dataset.alternateLogo;
+        
+        // Cambia la imagen del logo cuando el menú está abierto
+        if (hamburger.classList.contains('open')) {
+            logoImage.setAttribute('data-original-logo', originalSrc);
+            logoImage.src = alternateSrc;
+        } else {
+            logoImage.src = logoImage.getAttribute('data-original-logo');
+        }
     }
     
     // Event listener para el botón de menú

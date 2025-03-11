@@ -18,11 +18,11 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg  bg-transparent" id="mainNav">
+    <nav class="navbar navbar-expand-lg  bg-transparent shadow-none" id="mainNav">
         <div class="container container-nav d-flex align-items-center">
             <a class="navbar-brand" href="index.html">
-                <!-- Logo que cambia al hacer scroll -->
-                <img src="./assets/img/logoRed.png" alt="logo Construcciones Mochón Castillo" class="logo-light">
+                <img src="./assets/img/logoRed.png" alt="logo Construcciones Mochón Castillo" class="logo-light" 
+                     data-alternate-logo="./assets/img/logo-enhanced-removebg-preview.png">
             </a>
             <button class="navbar-toggler border-0" type="button" id="menuToggle">
                 <span class="hamburger">
@@ -51,6 +51,8 @@
                 <a href="#servicios">Proyectos</a>
                 <a href="#quienes-somos">Quiénes Somos</a>
                 <a href="#contacto">Contacto</a>
+                <a class="mt-4" href="tel:+34684208064">Teléfono</a>
+                <a class="border-top border-2 border-danger w-50 mx-auto"  href="tel:+34684208064">684 208 064</a>
             </div>
         </div>
 
@@ -68,8 +70,8 @@
                             <p class="animate-text fs-5">Somos una empresa de construcción dedicada a ofrecer servicios
                                 de alta calidad.</p>
                             <div class="hero-buttons d-flex justify-content-center align-items-center gap-2 mx-auto">
-                                <a href="#contacto" class="btn fw-bold btn-primary animate-btn-1">Contactar</a>
-                                <a href="#servicios" class="btn fw-bold btn-outline-light animate-btn-2">Conócenos</a>
+                                <a href="#contacto" id="#contacto" class="btn fw-bold btn-primary animate-btn-1">Contactar</a>
+                                <a href="#servicios" id="quienes-somos" class="btn fw-bold btn-outline-light animate-btn-2">Conócenos</a>
                             </div>
                         </div>
                     </div>
@@ -83,7 +85,7 @@
                             <h1 class="animate-title">Reforma tu baño o plato de ducha</h1>
                             <p class="animate-text fs-5">Materiales de primera calidad y acabados perfectos</p>
                             <div class="hero-buttons d-flex justify-content-center align-items-center gap-2 mx-auto">
-                                <a href="#contacto" class="btn fw-bold  btn-primary animate-btn-1">Contactar</a>
+                                <a href="#contacto"  id="#contacto" class="btn fw-bold  btn-primary animate-btn-1">Contactar</a>
                                 <!-- <a href="#quienes-somos" class="btn btn-outline-light animate-btn-2">Conócenos</a> -->
                             </div>
                         </div>
@@ -101,7 +103,7 @@
                                 PVC, mamparas de baño y ducha.
                             </p>
                             <div class="hero-buttons d-flex justify-content-center align-items-center gap-2 mx-auto">
-                                <a href="#contacto" class="btn fw-bold  btn-primary animate-btn-1">Contactar</a>
+                                <a href="#servicios" class="btn fw-bold  btn-primary animate-btn-1">Proyectos</a>
                                 <!-- <a href="#proyectos" class="btn btn-outline-light animate-btn-2">Ver proyectos</a> -->
                             </div>
                         </div>
@@ -143,9 +145,9 @@
                     innovadoras a nuestros clientes, contáctanos.</p>
             </div>
         </section>
-        <section>
+        <section id="quienes-somos">
             <!-- Sobre Nosotros -->
-            <section class="about-us" id="quienes-somos">
+            <section class="about-us" >
                 <div class="container">
                     <div class="row">
                         <div class="col-md-6 d-flex flex-column justify-content-center pe-5 box-left">
@@ -474,8 +476,8 @@
             </div>
         </section>
         <!-- Formulario -->
-         <section>
-            <div class="container my-5" id="contacto">
+         <section id="contacto">
+            <div class="container my-5" >
                 <p class="fw-bold p-title">
                     CONTACTO
                 </p>

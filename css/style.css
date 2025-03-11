@@ -257,11 +257,10 @@ h2{
     z-index: 999;
     top: 0;
     left: 0;
-    background-color: var(--primary);
     overflow-y: hidden;
     transition: 0.5s;
     opacity: 0;
-    background-color: rgb(161, 158, 154);
+    background-color: rgb(219, 219, 219);
 }
 
 .overlay.open {
@@ -290,14 +289,14 @@ h2{
 }
 
 .overlay a {
-    padding: 15px;
+    padding: 5px;
     text-decoration: none;
     font-size: 30px;
-    font-weight: 900;
-    color: var(--secondary);
+    font-weight: 700;
+    color: var(--dark);
     display: block;
     transition: 0.3s;
-    margin: 10px 0;
+    margin: 5px 0;
 }
 
 .overlay a:hover {
@@ -603,7 +602,8 @@ h2{
     }
     
     .navbar-brand img {
-        margin-top: 0 !important;
+        margin-top: 10px !important;
+        margin-left: 10px;
     }
 
     .btn-primary {
