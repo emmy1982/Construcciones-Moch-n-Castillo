@@ -1342,10 +1342,14 @@ h2{
     .imglogo img {
         width: 80% !important;
         height: auto;
-        position: relative;
+        position: absolute;
         top: 50%;
         left: 50%;
+        -webkit-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%);
+        max-height: 80vh;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
     }
 }
 
@@ -1852,5 +1856,51 @@ h2{
 .titulo-right{
     transform: translateX(50px);
     opacity: 0;
+}
+
+/* Correcciones para Safari */
+@supports (-webkit-touch-callout: none) {
+    /* Altura personalizada para iOS Safari */
+    :root {
+        --vh: 1vh;
+    }
+    
+    #heroCarousel,
+    .carousel-item {
+        height: calc(var(--vh, 1vh) * 100) !important;
+    }
+    
+    /* Mejoras para animaciones en Safari */
+    .animate-title,
+    .animate-text,
+    .hero-buttons {
+        -webkit-transform: translateY(20px);
+        transform: translateY(20px);
+        -webkit-transition: opacity 0.8s ease, -webkit-transform 0.8s ease;
+        transition: opacity 0.8s ease, transform 0.8s ease;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        will-change: opacity, transform;
+    }
+    
+    .animate-title.animate,
+    .animate-text.animate,
+    .hero-buttons.animate {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    
+    .animate-bg {
+        -webkit-transition: -webkit-transform 7s ease;
+        transition: transform 7s ease;
+    }
+    
+    /* Fix para botones en Safari */
+    .hero-buttons .btn {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        -webkit-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+    }
 }
 
