@@ -90,3 +90,25 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Inicialización del swiper de testimonios
+    if (document.querySelector('.testimonials')) {
+        const testimonialsSwiper = new Swiper('.testimonials', {
+            effect: "flip",
+            grabCursor: true,
+            pagination: {
+                el: ".swiper-pagination",
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            loop: true
+        });
+    }
+});
