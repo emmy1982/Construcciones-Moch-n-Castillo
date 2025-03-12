@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Bootstrap Carousel con opciones optimizadas
         const heroCarousel = new bootstrap.Carousel(heroCarouselElement, {
-            interval: 6000,        // 6 segundos entre slides
+            interval: 10000,        // Aumentar de 6000 a 10000 ms (10 segundos) entre slides
             pause: 'false',        // No pausar al pasar el ratón
             ride: 'carousel',      // Iniciar automáticamente
             wrap: true,            // Volver al principio después del último slide
@@ -177,16 +177,16 @@ document.addEventListener('DOMContentLoaded', function() {
         slide.classList.remove('animate-bg');
         void slide.offsetWidth;
         
-        // Secuencia de activación con timing mejorado
+        // Secuencia de activación con timing mejorado y más lento
         // Activar primero la animación de fondo
         slide.classList.add('animate-bg');
         
-        // Luego activar los elementos de texto en secuencia
+        // Luego activar los elementos de texto en secuencia con más tiempo entre cada uno
         const title = slide.querySelector('.animate-title');
         const text = slide.querySelector('.animate-text');
         const buttons = slide.querySelector('.hero-buttons');
         
-        // Usar una secuencia más precisa para las animaciones
+        // Usar una secuencia más lenta y pausada
         if (title) {
             setTimeout(() => {
                 title.classList.add('animate');
@@ -197,7 +197,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     title.style.transform = 'translateY(0)';
                     title.style.webkitTransform = 'translateY(0)';
                 }
-            }, 100);
+            }, 300); // Aumentado de 100ms a 300ms
         }
         
         if (text) {
@@ -209,7 +209,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     text.style.transform = 'translateY(0)';
                     text.style.webkitTransform = 'translateY(0)';
                 }
-            }, 300);
+            }, 800); // Aumentado de 300ms a 800ms
         }
         
         if (buttons) {
@@ -222,22 +222,22 @@ document.addEventListener('DOMContentLoaded', function() {
                     buttons.style.webkitTransform = 'translateY(0)';
                 }
                 
-                // Activar botones individualmente
+                // Activar botones individualmente con más pausa
                 const btnPrimary = buttons.querySelector('.animate-btn-1');
                 const btnOutline = buttons.querySelector('.animate-btn-2');
                 
                 if (btnPrimary) {
                     setTimeout(() => {
                         btnPrimary.classList.add('animate');
-                    }, 100);
+                    }, 200); // Aumentado de 100ms a 200ms
                 }
                 
                 if (btnOutline) {
                     setTimeout(() => {
                         btnOutline.classList.add('animate');
-                    }, 200);
+                    }, 400); // Aumentado de 200ms a 400ms
                 }
-            }, 500);
+            }, 1300); // Aumentado de 500ms a 1300ms
         }
     }
     

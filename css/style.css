@@ -397,11 +397,11 @@ h2{
 }
 
 .carousel-item.img-hero2::before {
-    background-image: url('../assets/img/workRealizer2.jpg');
+    background-image: url('../assets/servicios/Cocina01.jpg');
 }
 
 .carousel-item.img-hero3::before {
-    background-image: url('../assets/img/heroInteg.jpg');
+    background-image: url('../assets/img/workRealizer2.jpg');
 }
 
 /* Efecto de aparición gradual para cada slide */
@@ -452,15 +452,15 @@ h2{
     }
 }
 
-/* Animaciones para elementos de texto */
+/* Animaciones para elementos de texto - versión más lenta */
 .animate-title,
 .animate-text,
 .hero-buttons {
     opacity: 0;
     -webkit-transform: translateY(30px);
     transform: translateY(30px);
-    -webkit-transition: opacity 0.6s cubic-bezier(0.165, 0.84, 0.44, 1), -webkit-transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
-    transition: opacity 0.6s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    -webkit-transition: opacity 1s cubic-bezier(0.165, 0.84, 0.44, 1), -webkit-transform 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: opacity 1s cubic-bezier(0.165, 0.84, 0.44, 1), transform 1s cubic-bezier(0.165, 0.84, 0.44, 1);
     will-change: opacity, transform;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
@@ -481,8 +481,8 @@ h2{
     opacity: 0;
     -webkit-transform: translateY(20px);
     transform: translateY(20px);
-    -webkit-transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) 0.2s;
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) 0.2s;
+    -webkit-transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) 0.2s;
+    transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) 0.2s;
     will-change: opacity, transform;
 }
 
@@ -604,11 +604,11 @@ h2{
 }
 
 
-/* Efecto de transición entre slides */
+/* Transición más lenta entre slides */
 .carousel-fade .carousel-item {
     opacity: 0;
-    -webkit-transition: opacity 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
-    transition: opacity 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+    -webkit-transition: opacity 1.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: opacity 1.5s cubic-bezier(0.165, 0.84, 0.44, 1);
     will-change: opacity;
 }
 
@@ -777,26 +777,26 @@ h2{
     }
 }
 
-/* Animaciones para los elementos del carrusel */
+/* Animaciones para los elementos del carrusel - más lentas */
 .carousel-item.active .animate-title {
-    -webkit-animation: fadeInUp 1s ease forwards;
-    animation: fadeInUp 1s ease forwards;
-    -webkit-animation-delay: 0.3s;
-    animation-delay: 0.3s;
-}
-
-.carousel-item.active .animate-text {
-    -webkit-animation: fadeInUp 1s ease forwards;
-    animation: fadeInUp 1s ease forwards;
+    -webkit-animation: fadeInUp 1.5s ease forwards;
+    animation: fadeInUp 1.5s ease forwards;
     -webkit-animation-delay: 0.5s;
     animation-delay: 0.5s;
 }
 
+.carousel-item.active .animate-text {
+    -webkit-animation: fadeInUp 1.5s ease forwards;
+    animation: fadeInUp 1.5s ease forwards;
+    -webkit-animation-delay: 1s;
+    animation-delay: 1s;
+}
+
 .carousel-item.active .hero-buttons {
-    -webkit-animation: fadeInUp 1s ease forwards;
-    animation: fadeInUp 1s ease forwards;
-    -webkit-animation-delay: 0.7s;
-    animation-delay: 0.7s;
+    -webkit-animation: fadeInUp 1.5s ease forwards;
+    animation: fadeInUp 1.5s ease forwards;
+    -webkit-animation-delay: 1.5s;
+    animation-delay: 1.5s;
 }
 
 /* Keyframes optimizados para animaciones */
@@ -838,7 +838,7 @@ h2{
     transform: translateZ(0);
 }
 
-/* Animaciones para imágenes del carrusel */
+/* Animaciones para imágenes del carrusel - más lentas */
 .carousel-item {
     overflow: hidden;
     position: relative;
@@ -851,7 +851,7 @@ h2{
     transform: translateZ(0);
 }
 
-/* Efecto de zoom para las imágenes de fondo */
+/* Efecto de zoom para las imágenes de fondo - más lento */
 .carousel-item::before {
     content: "";
     position: absolute;
@@ -862,18 +862,19 @@ h2{
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    -webkit-transition: -webkit-transform 8s cubic-bezier(0.165, 0.84, 0.44, 1);
-    transition: transform 8s cubic-bezier(0.165, 0.84, 0.44, 1);
+    -webkit-transition: -webkit-transform 12s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: transform 12s cubic-bezier(0.165, 0.84, 0.44, 1);
     z-index: -1;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     will-change: transform;
 }
 
-/* Animación de zoom para la imagen activa */
-.carousel-item.active::before {
-    -webkit-animation: zoomIn 8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
-    animation: zoomIn 8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+/* Animación de zoom para la imagen activa - más lenta */
+.carousel-item.active::before,
+.carousel-item.animate-bg::before {
+    -webkit-animation: zoomIn 12s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+    animation: zoomIn 12s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
     -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
 }
@@ -1951,15 +1952,15 @@ h2{
 }
 
 .carousel-item.animate-bg::before {
-    -webkit-animation: zoomIn 8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
-    animation: zoomIn 8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+    -webkit-animation: zoomIn 12s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+    animation: zoomIn 12s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
 }
 
 /* Un selector más específico para asegurar que Safari aplique la animación */
 .carousel-item.active::before,
 .carousel-item.animate-bg::before {
-    -webkit-animation: zoomIn 8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
-    animation: zoomIn 8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+    -webkit-animation: zoomIn 12s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+    animation: zoomIn 12s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
     -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
 }
@@ -1967,8 +1968,8 @@ h2{
 /* Safari específicamente */
 .safari .carousel-item.active::before,
 .safari .carousel-item.animate-bg::before {
-    -webkit-animation: zoomIn 8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards !important;
-    animation: zoomIn 8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards !important;
+    -webkit-animation: zoomIn 12s cubic-bezier(0.165, 0.84, 0.44, 1) forwards !important;
+    animation: zoomIn 12s cubic-bezier(0.165, 0.84, 0.44, 1) forwards !important;
     -webkit-backface-visibility: hidden !important;
     backface-visibility: hidden !important;
     -webkit-transform-style: preserve-3d !important;
@@ -1985,7 +1986,7 @@ h2{
         backface-visibility: hidden;
     }
     
-    /* Realizar el zoom con transform3d para mejor rendimiento */
+    /* Realizar el zoom con transform3d para mejor rendimiento - más lento */
     @-webkit-keyframes zoomIn {
         0% {
             -webkit-transform: scale3d(1, 1, 1) translateZ(0);
@@ -2006,6 +2007,20 @@ h2{
             -webkit-transform: scale3d(1.1, 1.1, 1) translateZ(0);
             transform: scale3d(1.1, 1.1, 1) translateZ(0);
         }
+    }
+    
+    /* Animaciones más lentas para elementos internos */
+    .animate-title.animate,
+    .animate-text.animate,
+    .hero-buttons.animate {
+        -webkit-transition-duration: 1.2s !important;
+        transition-duration: 1.2s !important;
+    }
+    
+    /* Transición más lenta entre slides */
+    .carousel-item {
+        -webkit-transition-duration: 1.5s !important;
+        transition-duration: 1.5s !important;
     }
 }
 
