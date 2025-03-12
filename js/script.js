@@ -33,6 +33,82 @@ document.addEventListener('DOMContentLoaded', function() {
             toggleMenu();
         });
     });
+
+    // Detectar si estamos en Safari
+    const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+    
+    // Variables para el viewport en iOS
+    function setVH() {
+        // Set the value of the --vh custom property to the real height of the viewport
+        let vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+    }
+    
+    // Inicializar altura
+    setVH();
+    
+    // Actualizar en cambios de orientación y resize
+    window.addEventListener('resize', setVH);
+    window.addEventListener('orientationchange', setVH);
+    
+    // Mejoras específicas para Safari
+    if (isSafari) {
+        // Aplicar clase adicional al body para estilos específicos de Safari
+        document.body.classList.add('safari');
+        
+        // Ajuste para el carrusel
+        const carousel = document.getElementById('heroCarousel');
+        if (carousel) {
+            carousel.style.webkitBackfaceVisibility = 'hidden';
+            carousel.style.backfaceVisibility = 'hidden';
+        }
+        
+        // Evitar problemas de flickering en animaciones
+        const animatedElements = document.querySelectorAll('.animate-title, .animate-text, .hero-buttons, .carousel-item');
+        animatedElements.forEach(el => {
+            el.style.webkitBackfaceVisibility = 'hidden';
+            el.style.backfaceVisibility = 'hidden';
+            el.style.webkitTransformStyle = 'preserve-3d';
+            el.style.transformStyle = 'preserve-3d';
+        });
+    }
+    
+    // Animación de elementos al hacer scroll
+    const animateOnScroll = function() {
+        const elements = document.querySelectorAll('.box-scroll, .box-left, .box-right, .box-scale, .tituloTop, .titulo-left, .titulo-right, .titulo-scale');
+        
+        elements.forEach(element => {
+            const elementPosition = element.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+            
+            if (elementPosition < windowHeight * 0.9) {
+                element.classList.add('show');
+            }
+        });
+    };
+    
+    // Ejecutar animación al cargar y al hacer scroll
+    animateOnScroll();
+    window.addEventListener('scroll', animateOnScroll);
+    
+    // Botón para volver arriba
+    const backToTopButton = document.getElementById('back-to-top');
+    if (backToTopButton) {
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
 });
 
 // Slider testimonios

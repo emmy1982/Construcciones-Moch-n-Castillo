@@ -2,6 +2,12 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Detectar Safari para aplicar correcciones específicas
     const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+    const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+    
+    // Aplicar clase específica para Safari al body
+    if (isSafari) {
+        document.body.classList.add('safari');
+    }
     
     // Precarga de imágenes antes de iniciar el carrusel
     preloadImages().then(() => {
@@ -15,6 +21,16 @@ document.addEventListener('DOMContentLoaded', function() {
         // Inicializar el carrusel con opciones optimizadas
         const heroCarouselElement = document.getElementById('heroCarousel');
         if (!heroCarouselElement) return;
+        
+        // Aplicar fix para Safari
+        if (isSafari) {
+            heroCarouselElement.style.webkitBackfaceVisibility = 'hidden';
+            heroCarouselElement.style.backfaceVisibility = 'hidden';
+            heroCarouselElement.style.webkitTransformStyle = 'preserve-3d';
+            heroCarouselElement.style.transformStyle = 'preserve-3d';
+            heroCarouselElement.style.webkitPerspective = '1000px';
+            heroCarouselElement.style.perspective = '1000px';
+        }
         
         var heroCarousel = new bootstrap.Carousel(heroCarouselElement, {
             interval: 6000,        // Tiempo entre slides reducido a 6 segundos para mejor ritmo
@@ -60,12 +76,25 @@ document.addEventListener('DOMContentLoaded', function() {
         window.addEventListener('resize', debounce(adjustCarouselHeight, 150));
         
         // Fix especial para Safari en iPhone/iPad
-        if (isSafari && /iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+        if (isSafari && isIOS) {
             // Safari en iOS necesita manejos especiales para height: 100vh
-            document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
-            window.addEventListener('resize', () => {
+            const setVH = () => {
                 document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
                 adjustCarouselHeight();
+                
+                // Para iOS 15+ que tiene problemas con 100vh
+                if (window.innerHeight > window.innerWidth) { // Portrait
+                    heroCarouselElement.style.height = `${window.innerHeight}px`;
+                    document.querySelectorAll('.carousel-item').forEach(item => {
+                        item.style.height = `${window.innerHeight}px`;
+                    });
+                }
+            };
+            
+            setVH();
+            window.addEventListener('resize', setVH);
+            window.addEventListener('orientationchange', () => {
+                setTimeout(setVH, 500); // Mayor retraso después de cambio de orientación
             });
         }
         

@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    -webkit-box-sizing: border-box;
 }
 
 :root {
@@ -27,8 +28,12 @@ body {
     background-color: var(--background-color) !important;
     overflow-x: hidden;
     display: grid;
+    display: -webkit-grid;
     grid-template-rows: auto 1fr auto;
+    -webkit-grid-template-rows: auto 1fr auto;
     min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 h2{
@@ -387,38 +392,64 @@ h2{
     position: relative;
 }
 
-.img-hero1::before,
-.img-hero2::before,
-.img-hero3::before {
+.carousel-item.img-hero1::before {
+    background-image: url('../assets/img/houseLux1.jpeg');
+}
+
+.carousel-item.img-hero2::before {
+    background-image: url('../assets/img/heroInteg.jpg');
+}
+
+.carousel-item.img-hero3::before {
+    background-image: url('../assets/img/workRealizer2.jpg');
+}
+
+/* Efecto de aparición gradual para cada slide */
+.carousel-item {
+    opacity: 0;
+    -webkit-transition: opacity 1.5s ease-in-out;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.carousel-item.active {
+    opacity: 1;
+}
+
+/* Añadir animación de enfoque/desenfoque para un efecto más suave */
+.carousel-item::after {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    background-size: cover;
-    background-position: center;
-    transition: transform 7s ease, filter 1s ease;
-    z-index: 0;
-    will-change: transform, filter;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    -webkit-transition: opacity 1.5s ease;
+    transition: opacity 1.5s ease;
 }
 
-.img-hero1::before {
-    background-image: url('../assets/img/houseLux1.jpeg');
+.carousel-item.active::after {
+    -webkit-animation: fadeInBlur 2s ease forwards;
+    animation: fadeInBlur 2s ease forwards;
 }
 
-.img-hero2::before {
-    background-image: url('../assets/img/houseLux2.jpeg');
+@-webkit-keyframes fadeInBlur {
+    0% {
+        opacity: 0.7;
+    }
+    100% {
+        opacity: 0;
+    }
 }
 
-.img-hero3::before {
-    background-image: url('../assets/img/herointeg.jpg');
-}
-
-/* Animación de zoom */
-.carousel-item.animate-bg::before {
-    transform: scale(1.1);
-    filter: brightness(1.05);
+@keyframes fadeInBlur {
+    0% {
+        opacity: 0.7;
+    }
+    100% {
+        opacity: 0;
+    }
 }
 
 /* Animaciones para elementos de texto */
@@ -579,67 +610,73 @@ h2{
 
 /* Adaptaciones responsive */
 @media (max-width: 991px) {
-    .carousel-caption h1 {
-        font-size: 2.8rem;
-    }
-
-    .construccion {
-        margin-left: -60px !important;
-        font-size: 1rem !important;
-    }
-
-    .carousel-caption p {
-        font-size: 1rem !important;
-    }
-}
-
-@media (max-width: 768px) {
-    .container-nav {
-        height: auto !important;
-        margin-top: 0 !important;
-    }
-    
-    .navbar-brand img {
-        margin-top: 10px !important;
-        margin-left: 10px;
-    }
-
-    .btn-primary {
-        width: 220px !important;
-
-    }
-
-    .btn-outline-light {
-        width: 220px !important;
+    .carousel-caption .text-center {
+        width: 95%;
     }
 
     .carousel-caption h1 {
-        font-size: 2.2rem;
+        font-size: 2.5rem;
     }
 
     .carousel-caption p {
         font-size: 1.2rem;
     }
+}
+
+@media (max-width: 767px) {
+    .carousel-caption h1 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .construccion {
+        font-size: 1.6rem !important;
+    }
+
+    .carousel-caption p {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
 
     .hero-buttons {
         flex-direction: column;
-        gap: 05px;
+        align-items: center;
     }
 
-    .btn-primary,
     .btn-outline-light {
-        padding: 5px 25px;
+        margin-top: 10px;
     }
 }
 
+/* Para pantallas muy pequeñas */
 @media (max-width: 480px) {
     .carousel-caption h1 {
         font-size: 1.8rem;
     }
 
+    .btn-primary,
+    .btn-outline-light {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Para dispositivos con poca altura */
+@media (max-height: 600px) {
+    .carousel-caption h1 {
+        font-size: 1.8rem;
+        margin-bottom: 0.8rem;
+    }
+
     .carousel-caption p {
         font-size: 1rem;
         margin-bottom: 1rem;
+    }
+
+    .btn-primary,
+    .btn-outline-light {
+        padding: 8px 20px;
+        font-size: 0.9rem;
     }
 }
 
@@ -733,40 +770,63 @@ h2{
 
 /* Animaciones para los elementos del carrusel */
 .carousel-item.active .animate-title {
+    -webkit-animation: fadeInUp 1s ease forwards;
     animation: fadeInUp 1s ease forwards;
+    -webkit-animation-delay: 0.3s;
     animation-delay: 0.3s;
 }
 
 .carousel-item.active .animate-text {
+    -webkit-animation: fadeInUp 1s ease forwards;
     animation: fadeInUp 1s ease forwards;
+    -webkit-animation-delay: 0.5s;
     animation-delay: 0.5s;
 }
 
 .carousel-item.active .hero-buttons {
+    -webkit-animation: fadeInUp 1s ease forwards;
     animation: fadeInUp 1s ease forwards;
+    -webkit-animation-delay: 0.7s;
     animation-delay: 0.7s;
 }
 
-@keyframes fadeInUp {
+@-webkit-keyframes fadeInUp {
     0% {
         opacity: 0;
+        -webkit-transform: translateY(30px);
         transform: translateY(30px);
     }
 
     100% {
         opacity: 1;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(30px);
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
         transform: translateY(0);
     }
 }
 
 /* Animaciones para imágenes del carrusel */
-
-/* Añadir después de la sección de animaciones existentes */
-
-/* Contenedor para la imagen con efecto de escala */
 .carousel-item {
     overflow: hidden;
     position: relative;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-perspective: 1000px;
+    perspective: 1000px;
+    will-change: transform, opacity;
 }
 
 /* Efecto de zoom para las imágenes de fondo */
@@ -780,145 +840,150 @@ h2{
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    -webkit-transition: -webkit-transform 8s ease;
     transition: transform 8s ease;
     z-index: -1;
-}
-
-.carousel-item.img-hero1::before {
-    background-image: url('../assets/img/houseLux1.jpeg');
-}
-
-.carousel-item.img-hero2::before {
-    background-image: url('../assets/img/heroInteg.jpg');
-}
-
-.carousel-item.img-hero3::before {
-    background-image: url('../assets/img/workRealizer2.jpg');
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
 }
 
 /* Animación de zoom para la imagen activa */
 .carousel-item.active::before {
+    -webkit-animation: zoomIn 8s ease forwards;
     animation: zoomIn 8s ease forwards;
 }
 
-/* Efecto de aparición gradual para cada slide */
-.carousel-item {
-    opacity: 0;
-    transition: opacity 1.5s ease-in-out;
-}
-
-.carousel-item.active {
-    opacity: 1;
-}
-
-/* Keyframes para la animación de zoom */
-@keyframes zoomIn {
+@-webkit-keyframes zoomIn {
     0% {
+        -webkit-transform: scale(1);
         transform: scale(1);
     }
 
     100% {
+        -webkit-transform: scale(1.1);
         transform: scale(1.1);
     }
 }
 
-/* Añadir animación de enfoque/desenfoque para un efecto más suave */
-.carousel-item::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.4);
-    opacity: 0;
-    transition: opacity 1.5s ease;
-}
-
-.carousel-item.active::after {
-    animation: fadeInBlur 2s ease forwards;
-}
-
-@keyframes fadeInBlur {
+@keyframes zoomIn {
     0% {
-        opacity: 0.7;
+        -webkit-transform: scale(1);
+        transform: scale(1);
     }
 
     100% {
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+    }
+}
+
+/* Animación de pulso para el botón de WhatsApp */
+@-webkit-keyframes pulse {
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        opacity: 0.7;
+    }
+    70% {
+        -webkit-transform: scale(1.2);
+        transform: scale(1.2);
+        opacity: 0;
+    }
+    100% {
+        -webkit-transform: scale(1.2);
+        transform: scale(1.2);
         opacity: 0;
     }
 }
 
-/* Responsive */
-@media (max-width: 991px) {
-    .carousel-caption .text-center {
-        width: 95%;
+@keyframes pulse {
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        opacity: 0.7;
     }
-
-    .carousel-caption h1 {
-        font-size: 2.5rem;
+    70% {
+        -webkit-transform: scale(1.2);
+        transform: scale(1.2);
+        opacity: 0;
     }
-
-    .carousel-caption p {
-        font-size: 1.2rem;
+    100% {
+        -webkit-transform: scale(1.2);
+        transform: scale(1.2);
+        opacity: 0;
     }
 }
 
-@media (max-width: 767px) {
-    .carousel-caption h1 {
-        font-size: 2rem;
-        margin-bottom: 1rem;
+/* Correcciones para Safari */
+@supports (-webkit-touch-callout: none) {
+    /* Altura personalizada para iOS Safari */
+    :root {
+        --vh: 1vh;
     }
-
-    .construccion {
-
-        font-size: 1.6rem !important;
+    
+    #heroCarousel,
+    .carousel-item {
+        height: calc(var(--vh, 1vh) * 100) !important;
+        -webkit-transform-style: preserve-3d;
+        transform-style: preserve-3d;
     }
-
-    .carousel-caption p {
-        font-size: 1rem;
-        margin-bottom: 1.5rem;
-    }
-
+    
+    /* Mejoras para animaciones en Safari */
+    .animate-title,
+    .animate-text,
     .hero-buttons {
-        flex-direction: column;
-        align-items: center;
+        -webkit-transform: translateY(20px);
+        transform: translateY(20px);
+        -webkit-transition: opacity 0.8s ease, -webkit-transform 0.8s ease;
+        transition: opacity 0.8s ease, transform 0.8s ease;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        will-change: opacity, transform;
     }
-
-    .btn-outline-light {
-        margin-top: 10px;
+    
+    .animate-title.animate,
+    .animate-text.animate,
+    .hero-buttons.animate {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
     }
-}
-
-/* Para pantallas muy pequeñas */
-@media (max-width: 480px) {
-    .carousel-caption h1 {
-        font-size: 1.8rem;
+    
+    .animate-bg {
+        -webkit-transition: -webkit-transform 7s ease;
+        transition: transform 7s ease;
     }
-
-    .btn-primary,
-    .btn-outline-light {
-        padding: 10px 20px;
-        font-size: 0.9rem;
+    
+    /* Fix para botones en Safari */
+    .hero-buttons .btn {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        -webkit-transition: all 0.3s ease;
+        transition: all 0.3s ease;
     }
-}
-
-/* Para dispositivos con poca altura */
-@media (max-height: 600px) {
-    .carousel-caption h1 {
-        font-size: 1.8rem;
-        margin-bottom: 0.8rem;
+    
+    /* Fix para transformaciones */
+    .card:hover,
+    .btn-primary:hover,
+    .btn-outline-light:hover,
+    .social-links a:hover,
+    .float-whatsapp:hover,
+    .back-to-top:hover {
+        -webkit-transform: translateY(-5px);
+        transform: translateY(-5px);
     }
-
-    .carousel-caption p {
-        font-size: 1rem;
-        margin-bottom: 1rem;
-    }
-
-    .btn-primary,
-    .btn-outline-light {
-        padding: 8px 20px;
-        font-size: 0.9rem;
+    
+    /* Fix para transiciones */
+    .carousel-item,
+    .carousel-item::before,
+    .overlay,
+    .overlay-content,
+    .nav-link::after {
+        -webkit-transition-duration: 0.5s;
+        transition-duration: 0.5s;
+        -webkit-transition-property: all;
+        transition-property: all;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
     }
 }
 
@@ -1858,49 +1923,4 @@ h2{
     opacity: 0;
 }
 
-/* Correcciones para Safari */
-@supports (-webkit-touch-callout: none) {
-    /* Altura personalizada para iOS Safari */
-    :root {
-        --vh: 1vh;
-    }
-    
-    #heroCarousel,
-    .carousel-item {
-        height: calc(var(--vh, 1vh) * 100) !important;
-    }
-    
-    /* Mejoras para animaciones en Safari */
-    .animate-title,
-    .animate-text,
-    .hero-buttons {
-        -webkit-transform: translateY(20px);
-        transform: translateY(20px);
-        -webkit-transition: opacity 0.8s ease, -webkit-transform 0.8s ease;
-        transition: opacity 0.8s ease, transform 0.8s ease;
-        -webkit-backface-visibility: hidden;
-        backface-visibility: hidden;
-        will-change: opacity, transform;
-    }
-    
-    .animate-title.animate,
-    .animate-text.animate,
-    .hero-buttons.animate {
-        -webkit-transform: translateY(0);
-        transform: translateY(0);
-    }
-    
-    .animate-bg {
-        -webkit-transition: -webkit-transform 7s ease;
-        transition: transform 7s ease;
-    }
-    
-    /* Fix para botones en Safari */
-    .hero-buttons .btn {
-        -webkit-transform: translateY(0);
-        transform: translateY(0);
-        -webkit-transition: all 0.3s ease;
-        transition: all 0.3s ease;
-    }
-}
 
